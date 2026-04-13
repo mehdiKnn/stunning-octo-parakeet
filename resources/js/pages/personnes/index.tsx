@@ -232,8 +232,6 @@ export default function PersonnesIndex({ personnes: paginator, filters, facets }
                                                         Nom{sortArrow('full_name')}
                                                     </button>
                                                 </TableHead>
-                                                <TableHead>Immat. CNSS</TableHead>
-                                                <TableHead>CIN</TableHead>
                                                 <TableHead>Entreprise</TableHead>
                                                 <TableHead>Ville</TableHead>
                                                 <TableHead className="text-right">
@@ -259,20 +257,10 @@ export default function PersonnesIndex({ personnes: paginator, filters, facets }
                                         <TableBody>
                                             {paginator.data.map((p) => (
                                                 <TableRow key={p.id}>
-                                                    <TableCell className="max-w-[220px] truncate font-medium">
+                                                    <TableCell className="max-w-[260px] truncate font-medium">
                                                         {p.full_name ?? '—'}
                                                     </TableCell>
-                                                    <TableCell className="font-mono text-xs text-muted-foreground">
-                                                        {p.immatriculation_number ?? '—'}
-                                                    </TableCell>
-                                                    <TableCell className="font-mono text-xs">
-                                                        {p.cin ? (
-                                                            <Badge variant="outline">{p.cin}</Badge>
-                                                        ) : (
-                                                            <span className="text-muted-foreground">—</span>
-                                                        )}
-                                                    </TableCell>
-                                                    <TableCell className="max-w-[220px] truncate text-muted-foreground">
+                                                    <TableCell className="max-w-[260px] truncate text-muted-foreground">
                                                         {p.raison_sociale ?? '—'}
                                                     </TableCell>
                                                     <TableCell className="max-w-[140px] truncate text-muted-foreground">
